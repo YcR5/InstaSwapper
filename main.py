@@ -92,15 +92,15 @@ class Instagram:
             "User-Agent: Instagram 11.0.0 Android (18/4.3; 320dpi; 720x1280; Xiaomi; HM 1SW; armani; qcom; en_US)",
             "Cookie: sessionid=" + self.sessionID
         ], "username=%s" % self.target)
-
+        if not response:
+            return False
         if "isn't" in response:
             self.attempts += 1
-
+        # Check if username claimed
         elif "\"status\":\"ok\"" in response:
             self.claimed = True
             self.running = False
             return True
-
         return False
 
 
@@ -158,7 +158,7 @@ def main():
 
             # Print if username claimed successfully
             if instagram.claimed:
-                print("\n\n{}Swapped Successfully: {}@{}\n".format(GREEN, RED, instagram.target))
+                print("\n\n{}Claimed Successfully: {}@{}\n".format(GREEN, RED, instagram.target))
                 input('Press enter to exit...')
                 exit()
 
