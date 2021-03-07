@@ -1,5 +1,5 @@
 # InstaSwapper
-Easy instagram username swapper, you can use it to swap usernames from account to another
+instagram username swapper, you can use it to swap usernames from account to another
 
 - If you have any question Talk to me via [Discord]
 
